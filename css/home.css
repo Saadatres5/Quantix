@@ -1,0 +1,212 @@
+/* ================================================================
+   QuantixTools — Homepage Styles
+   21st.dev aesthetic · Pro UX
+   ================================================================ */
+
+/* ── Hero Decorative Grid ────────────────────────────────────── */
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ── Floating Orbs ───────────────────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.45;
+}
+.hero-orb-1 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(37,168,112,.6), transparent 70%);
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  animation: orb-float 8s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(200,146,42,.4), transparent 70%);
+  bottom: 0; right: 5%;
+  animation: orb-float 10s ease-in-out infinite reverse;
+}
+@keyframes orb-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-20px); }
+}
+.hero-orb-2 { animation-name: orb-float-2; }
+@keyframes orb-float-2 {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-15px); }
+}
+
+/* ── Hero Content ────────────────────────────────────────────── */
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 1.25rem;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--gold-400);
+  border-radius: 50%;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ── Tool Cards Homepage ─────────────────────────────────────── */
+.home-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) { .home-tool-grid { grid-template-columns: 1fr; } }
+
+.home-tool-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 1.75rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition:
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base);
+}
+.home-tool-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--green-50), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--duration-base);
+}
+.home-tool-card:hover {
+  box-shadow: var(--shadow-green);
+  transform: translateY(-4px);
+  border-color: var(--green-400);
+  text-decoration: none;
+}
+.home-tool-card:hover::before { opacity: 1; }
+.home-tool-card:active { transform: translateY(-1px); }
+
+.htc-icon {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--green-100), var(--green-50));
+  border: 1px solid var(--green-200, rgba(37,168,112,.2));
+  border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.1rem;
+  position: relative; z-index: 1;
+  transition: transform var(--duration-base) var(--ease-spring), background var(--duration-base);
+}
+.home-tool-card:hover .htc-icon { transform: scale(1.08) rotate(-3deg); background: var(--green-100); }
+.htc-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; position: relative; z-index: 1; letter-spacing: -0.01em; }
+.htc-desc  { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.1rem; line-height: 1.6; position: relative; z-index: 1; }
+.htc-arrow {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--green-700);
+  position: relative; z-index: 1;
+  transition: gap var(--duration-fast) var(--ease-spring);
+}
+.home-tool-card:hover .htc-arrow { gap: 0.55rem; }
+
+/* ── Quick E-Number Links ────────────────────────────────────── */
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+.quick-link-card {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1rem 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    box-shadow var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    border-color var(--duration-base);
+}
+.quick-link-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+.quick-link-card.halal-border  { border-color: rgba(37,168,112,.35); }
+.quick-link-card.halal-border:hover  { border-color: var(--green-500); }
+.quick-link-card.haram-border  { border-color: rgba(192,57,43,.3); }
+.quick-link-card.haram-border:hover  { border-color: var(--red-500); }
+.quick-link-card.mashbooh-border { border-color: rgba(183,119,13,.3); }
+.quick-link-card.mashbooh-border:hover { border-color: var(--amber-500); }
+
+.ql-code    { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.01em; }
+.ql-name    { font-size: 0.72rem; color: var(--text-muted); margin: 0.2rem 0 0.35rem; }
+.ql-verdict { font-size: 0.75rem; font-weight: 700; }
+.halal-text    { color: var(--green-700); }
+.haram-text    { color: var(--red-500); }
+.mashbooh-text { color: var(--amber-500); }
+
+/* ── Why Section ─────────────────────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.why-icon-wrap {
+  width: 44px; height: 44px;
+  background: var(--green-100);
+  border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.why-item h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.why-item p  { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+/* ── Quick Zakat Calculator ──────────────────────────────────── */
+.quick-calc-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+.quick-calc-box h3 { margin-bottom: 1.25rem; font-size: 1.15rem; }
+.eligible-yes { color: var(--green-800); font-weight: 700; }
+.eligible-no  { color: var(--red-500); font-weight: 700; }
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0;
+  border: none;
+}

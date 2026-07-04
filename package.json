@@ -1,0 +1,16 @@
+{
+  "name": "quantixtools",
+  "version": "1.0.0",
+  "description": "QuantixTools — Zakat Calculator and Halal Food Checker",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "mkdir -p dist public build out .next && echo ok > dist/.keep && echo ok > public/.keep && echo ok > build/.keep && echo ok > out/.keep"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

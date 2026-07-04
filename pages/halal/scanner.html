@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#0a5c3f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halal Product Barcode Scanner — Check Instantly | QuantixTools</title>
+  <meta name="description" content="Scan any product barcode with your phone camera to instantly check Halal status. Free real-time scanner checks ingredients against 80+ Halal/Haram additives.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://quantixtools.com/halal-food-checker/scanner/">
+  <meta property="og:title" content="Halal Product Scanner — Scan & Check Instantly | QuantixTools">
+  <meta property="og:description" content="Point your camera at any product barcode and instantly see if it's Halal, Haram, or Mashbooh. Free, no app download needed.">
+    <meta property="og:image" content="https://quantixtools.com/images/og-halal.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="QuantixTools — Free Islamic Tools">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="QuantixTools">
+  <meta property="og:url" content="https://quantixtools.com/halal-food-checker/scanner/">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/scanner/">
+  <link rel="alternate" hreflang="ar" href="https://quantixtools.com/ar/halal-food-checker/scanner/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <style>
+    .scanner-box { background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;max-width:560px;margin:0 auto; }
+    .scanner-viewport { position:relative;background:#0a0a0a;min-height:320px;display:flex;align-items:center;justify-content:center; }
+    #qr-reader { width:100%; }
+    #qr-reader video { border-radius:0!important; }
+    .scan-frame-hint { position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5; }
+    .scan-status { text-align:center;padding:.85rem 1rem;font-size:.875rem;background:var(--bg-soft);color:var(--text-secondary); }
+    .scan-status-error { background:#fdecea;color:#c0392b; }
+    .scan-status-info { background:var(--green-light);color:var(--green-dark); }
+    .scan-idle-content { padding:2.5rem 1.5rem;text-align:center; }
+    .scan-icon-big { font-size:3.5rem;margin-bottom:1rem; }
+    .manual-entry { border-top:1px solid var(--border);padding:1.25rem 1.5rem; }
+    .manual-row { display:flex;gap:.6rem; }
+    .manual-row input { flex:1; }
+    .loading-spinner { display:inline-block;width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--green-mid);border-radius:50%;animation:spin 0.8s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .product-photo { max-width:140px;border-radius:var(--radius);margin:0 auto 1rem;display:block;border:1px solid var(--border); }
+    .ingredients-box { background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin-top:.75rem; }
+    .scan-camera-btn { display:inline-flex;align-items:center;gap:.5rem;justify-content:center; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://quantixtools.com/halal-food-checker/scanner/#webpage",
+        "url": "https://quantixtools.com/halal-food-checker/scanner/",
+        "name": "Halal Product Scanner — Scan Barcode to Check Halal Status",
+        "description": "Scan any product barcode to instantly check Halal status using a free camera-based scanner.",
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://quantixtools.com/#website" },
+        "dateModified": "2026-01-01",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quantixtools.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Halal Food Checker", "item": "https://quantixtools.com/halal-food-checker/" },
+            { "@type": "ListItem", "position": 3, "name": "Halal Product Scanner", "item": "https://quantixtools.com/halal-food-checker/scanner/" }
+          ]
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Halal Product Barcode Scanner",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (browser-based)",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Free camera-based barcode scanner that checks product ingredients against a Halal/Haram/Mashbooh E-number database.",
+        "url": "https://quantixtools.com/halal-food-checker/scanner/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Scan a Product for Halal Status",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Open the scanner", "text": "Tap 'Start Scanning' and allow camera access." },
+          { "@type": "HowToStep", "position": 2, "name": "Point at the barcode", "text": "Hold your camera steady over the product's barcode until it is recognised." },
+          { "@type": "HowToStep", "position": 3, "name": "View the verdict", "text": "Instantly see whether the product is Halal, Haram, or Mashbooh based on its additives." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How does the Halal product scanner work?", "acceptedAnswer": { "@type": "Answer", "text": "The scanner reads a product's barcode using your camera, looks up the product in the Open Food Facts database, extracts its listed additives (E-numbers), and cross-checks them against our Halal/Haram/Mashbooh database to give you an instant verdict." } },
+          { "@type": "Question", "name": "Is the scanner accurate?", "acceptedAnswer": { "@type": "Answer", "text": "The scanner is only as accurate as the underlying product database, which is community-contributed and may not cover every product or every country. Always verify with official halal certification for full assurance, especially for products not found in our scan." } },
+          { "@type": "Question", "name": "Does the scanner work without internet?", "acceptedAnswer": { "@type": "Answer", "text": "No, an internet connection is required to look up product data from the database after scanning the barcode." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google AdSense account verification -->
+  <meta name="google-adsense-account" content="ca-pub-5444446255342320">
+
+  <!-- Google AdSense — async, non-blocking -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5444446255342320"
+       crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Halal Product Scanner — Scan Barcode to Check Halal Status">
+  <meta name="twitter:description" content="Scan any product barcode to instantly check if it is Halal, Haram or Mashbooh. Free, no app download needed.">
+  <meta name="twitter:image" content="https://quantixtools.com/images/og-halal.jpg">
+  <meta name="twitter:site" content="@QuantixTools">
+</head>
+<body>
+
+  <div id="reading-progress" style="position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:9999;width:0;transition:width .1s;"></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon" aria-hidden="true">Q</div>
+      Quantix<span>Tools</span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="/zakat-calculator/" data-i18n="nav_zakat">Zakat Calculator</a>
+      <a href="/halal-food-checker/" data-i18n="nav_halal">Halal Checker</a>
+      <a href="/about/" data-i18n="nav_about">About</a>
+    </div>
+    <div id="lang-switcher"></div>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/halal-food-checker/">Halal Food Checker</a> <span>›</span>
+      <span aria-current="page">Product Scanner</span>
+    </nav>
+  </div>
+
+  <section class="hero" style="padding:2rem 1rem 3rem" aria-labelledby="scanner-h1">
+    <div class="container">
+      <div class="hero-badge">📷 Free Camera Barcode Scanner</div>
+      <h1 id="scanner-h1">Halal Product Scanner — Scan Any Barcode Instantly</h1>
+      <p>Point your camera at a product's barcode to instantly check its ingredients against our Halal, Haram, and Mashbooh additive database.</p>
+    </div>
+  </section>
+
+  <div class="container"><div class="ad-slot ad-slot-banner" aria-label="Advertisement">Advertisement</div></div>
+
+  <main id="main-content">
+  <div class="container" style="margin:2rem auto">
+    <div class="scanner-box">
+
+      <!-- IDLE STATE -->
+      <div id="scan-idle">
+        <div class="scan-idle-content">
+          <div class="scan-icon-big">📷</div>
+          <h2 style="margin-bottom:.5rem" id="scanner-status">Scanner Ready</h2>
+          <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.5rem">Allow camera access to scan a product barcode, or enter the barcode number manually below.</p>
+          <button class="btn btn-primary scan-camera-btn" onclick="startScan()" style="max-width:280px;margin:0 auto">📷 Start Scanning</button>
+        </div>
+        <div class="manual-entry">
+          <label class="form-label" for="manual-barcode">Or enter barcode number manually</label>
+          <div class="manual-row" style="margin-top:.5rem">
+            <input type="text" id="manual-barcode" class="form-input" placeholder="e.g. 3017624010701" inputmode="numeric" aria-label="Enter barcode number">
+            <button class="btn btn-outline" onclick="submitManualBarcode()">Check</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVE SCANNING STATE -->
+      <div id="scan-active" style="display:none">
+        <div class="scanner-viewport">
+          <div id="qr-reader"></div>
+        </div>
+        <div id="scan-status" class="scan-status">Point your camera at a barcode</div>
+        <div style="padding:1rem 1.5rem">
+          <button class="btn btn-outline" onclick="stopScan()" style="width:100%">Cancel</button>
+        </div>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div id="scan-loading" style="display:none">
+        <div style="padding:3rem 1.5rem;text-align:center">
+          <div class="loading-spinner" aria-hidden="true"></div>
+          <p style="margin-top:1rem;color:var(--text-secondary)">Looking up barcode <strong id="loading-barcode"></strong>…</p>
+        </div>
+      </div>
+
+      <!-- RESULT STATE -->
+      <div id="scan-result" style="display:none">
+        <div style="padding:1.5rem" aria-live="polite">
+          <img id="result-product-image" class="product-photo" src="" alt="Halal product barcode scanner interface">
+          <div style="text-align:center;margin-bottom:1rem">
+            <p id="result-product-name" style="margin-bottom:.2rem;font-size:1.15rem;font-weight:700">—</p>
+            <p id="result-product-brand" style="color:var(--text-muted);font-size:.875rem;margin-bottom:.2rem">—</p>
+            <p style="font-size:.75rem;color:var(--text-muted)">Barcode: <span id="result-barcode">—</span></p>
+          </div>
+          <div style="text-align:center;margin-bottom:.5rem">
+            <span id="result-verdict" class="verdict">—</span>
+          </div>
+          <p id="result-verdict-note" style="text-align:center;font-size:.85rem;color:var(--text-muted);margin-bottom:1.25rem">—</p>
+
+          <h3 style="font-size:.95rem;margin-bottom:.5rem">Detected Additives</h3>
+          <div id="result-enumbers"></div>
+
+          <details style="margin-top:1rem">
+            <summary style="cursor:pointer;font-size:.875rem;font-weight:500;color:var(--green-dark)">View Full Ingredients List</summary>
+            <div class="ingredients-box" id="result-ingredients-text-wrap">
+              <div id="result-ingredients-text"></div>
+            </div>
+          </details>
+
+          <button class="btn btn-primary" onclick="scanAnother()" style="margin-top:1.5rem;width:100%">📷 Scan Another Product</button>
+        </div>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div id="scan-error" style="display:none">
+        <div style="padding:2.5rem 1.5rem;text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:1rem">⚠️</div>
+          <p id="error-message" style="color:var(--text-secondary);margin-bottom:1.5rem">—</p>
+          <button class="btn btn-primary" onclick="scanAnother()">Try Again</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:1rem;max-width:560px;margin-left:auto;margin-right:auto">
+      Product data powered by <a href="https://world.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, a free and open community database. Coverage varies by country and product.
+    </p>
+  </div>
+
+  <div class="container"><div class="ad-slot ad-slot-rect" aria-label="Advertisement">Advertisement</div></div>
+
+  <!-- SEO Content -->
+  <article class="container-narrow section" aria-labelledby="content-h2">
+
+    <div style="background:var(--green-light);border-left:4px solid var(--green-mid);padding:1rem 1.25rem;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:1.5rem">
+      <strong>Quick Answer:</strong> Our Halal Product Scanner uses your camera to read a product's barcode, looks it up in a global product database, and checks its listed additives against our Halal/Haram/Mashbooh E-number database — all in seconds, for free.
+    </div>
+
+    <h2 id="content-h2">How the Halal Product Scanner Works</h2>
+    <p>Checking whether a packaged food product is halal traditionally means reading the ingredients list and recognising potentially problematic E-numbers — a slow process, especially while shopping. Our Halal Product Scanner automates this by combining three things: your phone or computer's camera, a global open product database, and our curated Halal/Haram/Mashbooh additive database.</p>
+    <p>When you scan a barcode, the scanner reads the number, sends it to the Open Food Facts database (a free, community-maintained database covering millions of products worldwide), retrieves the listed ingredients and additives, and instantly cross-references any E-numbers against our halal classification database — giving you a clear verdict in seconds.</p>
+
+    <h2>How to Use the Scanner — Step by Step</h2>
+    <ol style="margin:0 0 1rem 1.5rem">
+      <li><strong>Tap "Start Scanning"</strong> and allow camera access when prompted by your browser</li>
+      <li><strong>Hold your camera</strong> steady over the product's barcode (usually on the back or side of packaging)</li>
+      <li><strong>Wait for detection</strong> — this typically takes 1-3 seconds once the barcode is in focus</li>
+      <li><strong>Review the verdict</strong> — Halal, Haram, or Mashbooh, along with the specific additives detected</li>
+      <li><strong>Check the full ingredients</strong> by expanding the details section if you want more information</li>
+    </ol>
+    <p>If your camera cannot read the barcode (poor lighting, damaged packaging, or camera permission issues), you can manually type the barcode number — usually printed beneath the barcode lines — into the manual entry field instead.</p>
+
+    <h2>Why Product Coverage Varies</h2>
+    <p>Our scanner relies on Open Food Facts, a community-contributed, crowd-sourced product database covering millions of products globally. This means:</p>
+    <ul style="margin:0 0 1rem 1.5rem">
+      <li><strong>Popular international brands</strong> are very well covered, especially in Europe, North America, and increasingly the Gulf region</li>
+      <li><strong>Regional or local brands</strong> may have limited or no data, especially in some Asian and African markets</li>
+      <li><strong>Newer products</strong> may not yet be added by the community</li>
+      <li><strong>Data accuracy depends on contributors</strong> — while generally reliable, always cross-check critical decisions with official halal certification</li>
+    </ul>
+    <p>If a product isn't found, you can manually search any E-number you spot on the ingredients list using our <a href="/halal-food-checker/">Halal E-Number Checker</a> tool instead.</p>
+
+    <h2>What the Scanner Checks</h2>
+    <div class="table-wrap">
+      <table aria-label="What the scanner checks">
+        <thead><tr><th>Check</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Product name & brand</td><td>Open Food Facts database</td></tr>
+          <tr><td>Listed E-numbers / additives</td><td>Open Food Facts database</td></tr>
+          <tr><td>Halal/Haram/Mashbooh status per additive</td><td>QuantixTools E-number database</td></tr>
+          <tr><td>Full ingredients list</td><td>Open Food Facts database</td></tr>
+          <tr><td>Product packaging photo</td><td>Open Food Facts database (if available)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Important Limitations to Understand</h2>
+    <p>While our scanner is a powerful convenience tool, it has important limitations every user should understand:</p>
+    <ul style="margin:0 0 1rem 1.5rem">
+      <li><strong>Not a substitute for certification:</strong> A "likely halal" result means no flagged haram or doubtful additives were detected — it does not mean the product carries official halal certification</li>
+      <li><strong>Mashbooh additives need verification:</strong> If an additive like E471 is detected, the product is marked Mashbooh because the true source cannot be confirmed without checking for certification logos directly on the packaging</li>
+      <li><strong>Cross-contamination not detected:</strong> The scanner cannot detect whether a product was manufactured on shared equipment with non-halal products</li>
+      <li><strong>Database may be outdated:</strong> Manufacturers sometimes reformulate products; the database may not always reflect the very latest ingredient list</li>
+      <li><strong>Regional variations:</strong> The same product may have different formulations in different countries</li>
+    </ul>
+
+    <h2>Privacy & How Your Data Is Used</h2>
+    <p>We do not store any barcode you scan or any product data. Each scan sends a real-time request directly to the Open Food Facts public database and our own additive database. No personal data, scan history, or location is collected or saved on our servers.</p>
+
+    <h2>Key Takeaways</h2>
+    <ul style="margin:0 0 1rem 1.5rem">
+      <li>The scanner uses your <strong>camera and a free product database</strong> to check halal status instantly</li>
+      <li>Results are based on <strong>detected E-numbers</strong>, not official certification</li>
+      <li><strong>Mashbooh results require manual verification</strong> via halal certification logos</li>
+      <li>Coverage is <strong>strongest for popular global brands</strong></li>
+      <li>You can always fall back to <strong>manual barcode entry</strong> or the <a href="/halal-food-checker/">E-number search tool</a></li>
+    </ul>
+
+    <div style="background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin:2rem 0;display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+      <div style="font-size:2rem">📷</div>
+      <div>
+        <div style="font-weight:600;color:var(--green-dark)">QuantixTools Halal Research Team</div>
+        <div class="last-updated" data-date="2026-01-01" style="font-size:.8rem;color:var(--text-muted)"></div>
+        <p style="font-size:.875rem;color:var(--text-secondary);margin:.25rem 0 0">Powered by the Open Food Facts open database and our curated E-number classification list. For binding halal certification questions, consult official certification bodies (JAKIM, ESMA, HFA, IFANCA).</p>
+      </div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">How does the Halal product scanner work? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">The scanner reads a product's barcode using your camera, looks up the product in the Open Food Facts database, extracts its listed additives (E-numbers), and cross-checks them against our Halal/Haram/Mashbooh database to give you an instant verdict.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Is the scanner 100% accurate? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">No tool can guarantee 100% accuracy because it depends on a community-contributed product database. Always treat a "likely halal" result as a helpful guide, not a final ruling — verify important purchases with official halal certification logos on the packaging.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does the scanner work without internet? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">No. An internet connection is required because the scanner looks up product data from an online database in real time after reading the barcode.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">What if my product isn't found? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">If a product isn't in the database, you'll see a "not found" message. You can then manually read the ingredients list on the packaging and search any E-numbers individually using our <a href="/halal-food-checker/">Halal E-Number Checker</a> tool.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Does scanning store my data or location? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">No. We do not store scan history, barcode numbers, or your location. Each scan is a real-time, anonymous lookup against the public product database.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Can I scan products from any country? <span class="faq-icon" aria-hidden="true">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes, the underlying database covers products from over 150 countries, though coverage is denser for some regions (Europe, North America) than others. If a product from your region isn't found, consider contributing its data to Open Food Facts to help future users.</div></div>
+    </div>
+
+    <h2>Related Tools</h2>
+    <ul style="margin:0 0 1rem 1.5rem">
+      <li><a href="/halal-food-checker/">Halal E-Number Checker — Manual Search</a></li>
+      <li><a href="/halal-food-checker/e471/">Is E471 Halal?</a></li>
+      <li><a href="/halal-food-checker/e441/">Is E441 Gelatine Halal?</a></li>
+      <li><a href="/halal-food-checker/e120/">Is E120 Carmine Halal?</a></li>
+      <li><a href="/zakat-calculator/">Free Zakat Calculator</a></li>
+    </ul>
+
+  </article>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="nav-logo-icon" style="width:26px;height:26px;font-size:13px;" aria-hidden="true">Q</div>
+          Quantix<span>Tools</span>
+        </div>
+        <p class="footer-desc">Free Islamic tools. Halal Food Checker and Zakat Calculator, available in English and Arabic.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Zakat</div>
+        <ul class="footer-links">
+          <li><a href="/zakat-calculator/">Zakat Calculator</a></li>
+          <li><a href="/zakat-calculator/gold/">Zakat on Gold</a></li>
+          <li><a href="/zakat-calculator/crypto/">Zakat on Crypto</a></li>
+          <li><a href="/zakat-calculator/nisab/">Nisab Threshold</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Halal Checker</div>
+        <ul class="footer-links">
+          <li><a href="/halal-food-checker/">E-Number Checker</a></li>
+          <li><a href="/halal-food-checker/e471/">Is E471 Halal?</a></li>
+          <li><a href="/halal-food-checker/e441/">Is E441 Halal?</a></li>
+          <li><a href="/halal-food-checker/e120/">Is E120 Halal?</a></li>
+          <li><a href="/halal-food-checker/scanner/">Barcode Scanner</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Info</div>
+        <ul class="footer-links">
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/about/" data-i18n="footer_about">About Us</a></li>
+          <li><a href="/privacy-policy/" data-i18n="footer_privacy">Privacy Policy</a></li>
+          <li><a href="/terms/" data-i18n="footer_terms">Terms</a></li>
+          <li><a href="javascript:void(0)" onclick="QTi18n&&QTi18n.apply('ar')" style="cursor:pointer" lang="ar">عربي</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025–2026 QuantixTools.com</span>
+      <span data-i18n="footer_bottom">For informational purposes only. Consult a qualified Islamic scholar for personal rulings.</span>
+    </div>
+  </div>
+</footer>
+
+  <!-- Barcode scanning library (free, open source, CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+<script src="/js/main.js" defer></script>
+  <script src="/js/enumbers.js" defer></script>
+  <script src="/js/scanner.js" defer></script>
+</body>
+</html>
