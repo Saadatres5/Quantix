@@ -6,7 +6,7 @@
   <!-- ── Homepage ── -->
   <url>
     <loc>https://quantixtools.com/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/"/>
@@ -24,7 +24,7 @@
   <!-- ── Zakat Calculator ── -->
   <url>
     <loc>https://quantixtools.com/zakat-calculator/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/"/>
@@ -45,7 +45,7 @@
 
   <url>
     <loc>https://quantixtools.com/zakat-calculator/gold/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/gold/"/>
@@ -62,7 +62,7 @@
 
   <url>
     <loc>https://quantixtools.com/zakat-calculator/crypto/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/crypto/"/>
@@ -79,7 +79,7 @@
 
   <url>
     <loc>https://quantixtools.com/zakat-calculator/nisab/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/nisab/"/>
@@ -97,7 +97,7 @@
   <!-- ── Halal Food Checker ── -->
   <url>
     <loc>https://quantixtools.com/halal-food-checker/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/"/>
@@ -118,7 +118,7 @@
 
   <url>
     <loc>https://quantixtools.com/halal-food-checker/e471/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e471/"/>
@@ -135,7 +135,7 @@
 
   <url>
     <loc>https://quantixtools.com/halal-food-checker/e441/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e441/"/>
@@ -152,7 +152,7 @@
 
   <url>
     <loc>https://quantixtools.com/halal-food-checker/e120/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e120/"/>
@@ -169,7 +169,7 @@
 
   <url>
     <loc>https://quantixtools.com/halal-food-checker/scanner/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/scanner/"/>
@@ -187,28 +187,28 @@
   <!-- ── Info Pages ── -->
   <url>
     <loc>https://quantixtools.com/about/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
   </url>
 
   <url>
     <loc>https://quantixtools.com/contact/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
 
   <url>
     <loc>https://quantixtools.com/privacy-policy/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
 
   <url>
     <loc>https://quantixtools.com/terms/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
