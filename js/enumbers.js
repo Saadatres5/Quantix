@@ -72,6 +72,29 @@
     { code:'E954', name:'Saccharin', status:'H', category:'Sweetener', source:'Synthetic', desc:'Artificial sweetener. Halal.', brands:'Tabletop sweeteners, diet foods.' },
     { code:'E960', name:'Steviol glycosides (Stevia)', status:'H', category:'Sweetener', source:'Plant (stevia leaf)', desc:'Natural plant sweetener. Halal.', brands:'Diet drinks, low-calorie foods.' },
     { code:'E965', name:'Maltitol', status:'H', category:'Sweetener', source:'Starch (plant)', desc:'Sugar alcohol from corn or wheat starch. Halal.', brands:'Sugar-free chocolate, sweets.' },
+
+    // ── BATCH 3: From GSC query data July 2026 ───────────────
+    { code:'E250', name:'Sodium Nitrite', status:'H', category:'Preservative', source:'Synthetic', desc:'Preservative used in cured meats. Synthetic — no animal origin. Halal.', brands:'Bacon, ham, sausages, hot dogs.' },
+    { code:'E251', name:'Sodium Nitrate', status:'H', category:'Preservative', source:'Synthetic', desc:'Preservative in cured and smoked meats. Synthetic. Halal.', brands:'Smoked salmon, cured meats, cheese.' },
+    { code:'E330', name:'Citric Acid', status:'H', category:'Acidity Regulator', source:'Fermentation of plant sugars', desc:'Natural acid from citrus fermentation. Always halal.', brands:'Soft drinks, jams, sweets, tinned foods.' },
+    { code:'E338', name:'Phosphoric Acid', status:'H', category:'Acidity Regulator', source:'Mineral/Synthetic', desc:'Mineral acid. Halal — no animal origin.', brands:'Cola drinks, processed cheese.' },
+    { code:'E340', name:'Potassium Phosphates', status:'H', category:'Acidity Regulator', source:'Mineral', desc:'Mineral salts. Halal.', brands:'Processed cheese, bread, meat products.' },
+    { code:'E385', name:'Calcium Disodium EDTA', status:'H', category:'Preservative', source:'Synthetic', desc:'Chelating agent. Synthetic. Halal.', brands:'Canned shellfish, margarine, salad dressings.' },
+    { code:'E404', name:'Calcium Alginate', status:'H', category:'Thickener', source:'Seaweed', desc:'Seaweed-derived thickener/gelling agent. Always halal.', brands:'Restructured fish, artificial fruit.' },
+    { code:'E418', name:'Gellan Gum', status:'H', category:'Thickener', source:'Microbial fermentation', desc:'Produced by bacterial fermentation of plant sugars. Halal.', brands:'Dairy alternatives, jams, sweets.' },
+    { code:'E460', name:'Microcrystalline Cellulose', status:'H', category:'Anti-caking Agent', source:'Plant (wood pulp)', desc:'Plant fibre. Always halal.', brands:'Grated cheese, diet foods, tablets.' },
+    { code:'E461', name:'Methyl Cellulose', status:'H', category:'Thickener', source:'Plant (cellulose)', desc:'Plant cellulose derivative. Halal.', brands:'Diet foods, baked goods, ice cream.' },
+    { code:'E491', name:'Sorbitan Monostearate', status:'M', category:'Emulsifier', source:'Stearic acid — animal or plant', desc:'Stearic acid may be from pork or beef tallow. Mashbooh unless certified halal.', brands:'Yeast preparations, cake mixes.' },
+    { code:'E500', name:'Sodium Carbonates', status:'H', category:'Raising Agent', source:'Mineral/Synthetic', desc:'Baking soda base. Mineral origin. Always halal.', brands:'Baking powder, cocoa, bread.' },
+    { code:'E516', name:'Calcium Sulphate (Gypsum)', status:'H', category:'Firming Agent', source:'Mineral', desc:'Natural mineral. Always halal.', brands:'Tofu, beer, flour, bread.' },
+    { code:'E901', name:'Beeswax', status:'M', category:'Glazing Agent', source:'Insect (bees)', desc:'Produced by bees. Most scholars consider beeswax halal as it is secreted not from the bee's body. Mashbooh — some scholars differ.', brands:'Confectionery glaze, chocolate, fruit polish.' },
+    { code:'E903', name:'Carnauba Wax', status:'H', category:'Glazing Agent', source:'Plant (carnauba palm)', desc:'Plant wax from Brazilian palm leaves. Always halal.', brands:'Sweets, gum, pharmaceutical tablets.' },
+    { code:'E904', name:'Shellac', status:'M', category:'Glazing Agent', source:'Insect (lac bug)', desc:'Resin secreted by the female lac bug. Mashbooh — derived from insect secretion. Many scholars consider it haram.', brands:'Confectionery glaze, fruit coatings, pharmaceutical capsules.' },
+    { code:'E920', name:'L-Cysteine', status:'M', category:'Flour Treatment Agent', source:'Animal (often duck feathers or human hair) or synthetic', desc:'Can be derived from duck feathers, human hair, or pig bristles. Mashbooh — always check source. Synthetic L-Cysteine (E920) is halal.', brands:'Bread, rolls, baked goods.' },
+    { code:'E955', name:'Sucralose (Splenda)', status:'H', category:'Sweetener', source:'Synthetic (from sugar)', desc:'Artificial sweetener made from sugar. Halal — no animal origin.', brands:'Diet drinks, sugar-free products, protein bars.' },
+    { code:'E1412', name:'Distarch Phosphate', status:'H', category:'Thickener', source:'Modified starch (plant)', desc:'Modified plant starch. Always halal.', brands:'Sauces, soups, ready meals.' },
+    { code:'E1420', name:'Acetylated Starch', status:'H', category:'Thickener', source:'Modified starch (plant)', desc:'Modified plant starch. Halal.', brands:'Frozen foods, sauces, gravies.' },
+    { code:'E1442', name:'Hydroxypropyl Distarch Phosphate', status:'H', category:'Thickener', source:'Modified starch (plant)', desc:'Modified plant starch. Always halal.', brands:'Sauces, ready meals, dairy products.' },
   ];
 
   /* ── Search Function ── */

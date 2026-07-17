@@ -3,12 +3,9 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ── Homepage ── -->
   <url>
     <loc>https://quantixtools.com/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/"/>
@@ -21,85 +18,9 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/"/>
   </url>
 
-  <!-- ── Zakat Calculator ── -->
-  <url>
-    <loc>https://quantixtools.com/zakat-calculator/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/zakat-calculator/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/zakat-calculator/"/>
-    <image:image>
-      <image:loc>https://quantixtools.com/images/og-zakat.jpg</image:loc>
-      <image:title>Zakat Calculator 2026</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://quantixtools.com/zakat-calculator/gold/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/zakat-calculator/gold/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/zakat-calculator/gold/"/>
-  </url>
-
-  <url>
-    <loc>https://quantixtools.com/zakat-calculator/crypto/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/zakat-calculator/crypto/"/>
-  </url>
-
-  <url>
-    <loc>https://quantixtools.com/zakat-calculator/nisab/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/zakat-calculator/nisab/"/>
-  </url>
-
-  <!-- ── Halal Food Checker ── -->
   <url>
     <loc>https://quantixtools.com/halal-food-checker/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/"/>
@@ -110,107 +31,78 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/halal-food-checker/"/>
     <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/halal-food-checker/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/halal-food-checker/"/>
-    <image:image>
-      <image:loc>https://quantixtools.com/images/og-halal.jpg</image:loc>
-      <image:title>Halal E-Number Checker</image:title>
-    </image:image>
+    <image:image><image:loc>https://quantixtools.com/images/og-halal.jpg</image:loc><image:title>Halal E-Number Checker — 109+ food additives</image:title></image:image>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/halal-food-checker/e471/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.92</priority>
+  <url><loc>https://quantixtools.com/halal-food-checker/e471/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e471/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/e471/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/e471/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/halal-food-checker/e471/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/halal-food-checker/e471/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/halal-food-checker/e471/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/halal-food-checker/e471/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/halal-food-checker/e471/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/halal-food-checker/e471/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/halal-food-checker/e471/"/>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/halal-food-checker/e441/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/halal-food-checker/e441/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/halal-food-checker/e441/"/>
-  </url>
-
-  <url>
-    <loc>https://quantixtools.com/halal-food-checker/e120/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
+  <url><loc>https://quantixtools.com/halal-food-checker/e120/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e120/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/e120/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/halal-food-checker/e120/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/halal-food-checker/e120/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/halal-food-checker/e120/"/>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/halal-food-checker/scanner/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.88</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/halal-food-checker/scanner/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/halal-food-checker/scanner/"/>
+  <url><loc>https://quantixtools.com/halal-food-checker/e441/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/e441/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/e441/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/halal-food-checker/e441/"/>
   </url>
 
-  <!-- ── Info Pages ── -->
-  <url>
-    <loc>https://quantixtools.com/about/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.50</priority>
+  <url><loc>https://quantixtools.com/halal-food-checker/scanner/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.85</priority>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/contact/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.40</priority>
+  <url><loc>https://quantixtools.com/zakat-calculator/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://quantixtools.com/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://quantixtools.com/zakat-calculator/"/>
+    <image:image><image:loc>https://quantixtools.com/images/og-zakat.jpg</image:loc><image:title>Zakat Calculator 2026</image:title></image:image>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/privacy-policy/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
+  <url><loc>https://quantixtools.com/zakat-calculator/gold/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/gold/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/gold/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/gold/"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://quantixtools.com/zakat-calculator/gold/"/>
   </url>
 
-  <url>
-    <loc>https://quantixtools.com/terms/</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.30</priority>
+  <url><loc>https://quantixtools.com/zakat-calculator/crypto/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>monthly</changefreq><priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/crypto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/crypto/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/crypto/"/>
   </url>
+
+  <url><loc>https://quantixtools.com/zakat-calculator/nisab/</loc>
+    <lastmod>2026-07-17</lastmod><changefreq>weekly</changefreq><priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/nisab/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/nisab/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://quantixtools.com/zakat-calculator/nisab/"/>
+  </url>
+
+  <url><loc>https://quantixtools.com/about/</loc><lastmod>2026-07-17</lastmod><changefreq>yearly</changefreq><priority>0.40</priority></url>
+  <url><loc>https://quantixtools.com/contact/</loc><lastmod>2026-07-17</lastmod><changefreq>yearly</changefreq><priority>0.35</priority></url>
+  <url><loc>https://quantixtools.com/privacy-policy/</loc><lastmod>2026-07-17</lastmod><changefreq>yearly</changefreq><priority>0.25</priority></url>
+  <url><loc>https://quantixtools.com/terms/</loc><lastmod>2026-07-17</lastmod><changefreq>yearly</changefreq><priority>0.25</priority></url>
 
 </urlset>
