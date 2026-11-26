@@ -4,4 +4,6 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /drafts/
 
+Content-Signal: search=yes, ai-train=no
+
 Sitemap: https://quantixtools.com/sitemap.xml

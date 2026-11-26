@@ -192,10 +192,39 @@ const S = (file) => (_req, res) => {
   res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   res.sendFile(path.join(__dirname, file));
 };
-Object.entries(PAGE_ROUTES).forEach(([route, file]) => app.get(route, S(file)));
+Object.entries(PAGE_ROUTES)
+  .filter(([route]) => route !== '/')
+  .forEach(([route, file]) => app.get(route, S(file)));
+app.get('/', (req, res) => {
+  res.vary('Accept');
+  res.set(
+    'Link',
+    '<https://quantixtools.com/llms.txt>; rel="describedby"; type="text/plain", ' +
+      '<https://quantixtools.com/?format=markdown>; rel="alternate"; type="text/markdown"',
+  );
+
+  const accept = (req.get('Accept') || '').toLowerCase();
+  if (req.query.format === 'markdown' || accept.split(',').some((type) =>
+    type.trim().split(';')[0] === 'text/markdown')) {
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    return res.type('text/markdown').sendFile(path.join(__dirname, 'index.md'));
+  }
+
+  return S(PAGE_ROUTES['/'])(req, res);
+});
 app.get('/robots.txt', S('robots.txt'));
 app.get('/sitemap.xml', S('sitemap.xml'));
 app.get('/ads.txt', S('ads.txt'));
+app.get('/llms.txt', (_req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  res.type('text/plain').sendFile(path.join(__dirname, 'llms.txt'));
+});
+app.get('/.well-known/mcp/server-card.json', (_req, res) => {
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  res.type('application/json').sendFile(
+    path.join(__dirname, '.well-known', 'mcp', 'server-card.json'),
+  );
+});
 
 const legacyENumbers = [
   'e100','e101','e102','e104','e110','e120','e122','e124','e127','e129',

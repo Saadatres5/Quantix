@@ -5,11 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "node --check server.js && node --check js/enumbers.js && node --check js/main.js && node --check js/i18n.js && node --check js/zakat.js && node --check js/scanner.js"
+    "build": "node --check server.js && node --check js/enumbers.js && node --check js/main.js && node --check js/i18n.js && node --check js/zakat.js && node --check js/scanner.js && node --check js/agent-tools.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.19.2"
+  },
+  "overrides": {
+    "body-parser": "1.20.9",
+    "proxy-addr": "2.0.8",
+    "qs": "6.16.1"
   },
   "engines": {
     "node": ">=18.0.0"

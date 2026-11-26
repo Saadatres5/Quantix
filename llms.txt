@@ -1,0 +1,30 @@
+# QuantixTools
+
+> Free Islamic reference tools: a Zakat calculator and a searchable Halal food-additive checker. Calculations run in the visitor's browser. Content is informational and is not a fatwa or personal financial advice.
+
+## Main tools
+
+- [Zakat Calculator](https://quantixtools.com/zakat-calculator/): Estimate Zakat on cash, gold, silver, crypto, stocks, and business assets.
+- [Halal E-Number Checker](https://quantixtools.com/halal-food-checker/): Search food additives and review their listed status, source, and notes.
+- [Barcode Scanner](https://quantixtools.com/halal-food-checker/scanner/): Open the product barcode scanner.
+
+## Guides
+
+- [Zakat on Gold](https://quantixtools.com/zakat-calculator/gold/)
+- [Zakat on Cryptocurrency](https://quantixtools.com/zakat-calculator/crypto/)
+- [Zakat Nisab](https://quantixtools.com/zakat-calculator/nisab/)
+- [Zakat on Stocks](https://quantixtools.com/zakat-calculator/stocks/)
+- [Zakat on Business Assets](https://quantixtools.com/zakat-calculator/business/)
+- [E471](https://quantixtools.com/halal-food-checker/e471/)
+- [E441](https://quantixtools.com/halal-food-checker/e441/)
+- [E120](https://quantixtools.com/halal-food-checker/e120/)
+
+## About and contact
+
+- [About QuantixTools](https://quantixtools.com/about/)
+- [Contact](https://quantixtools.com/contact/): [hello@quantixtools.com](mailto:hello@quantixtools.com)
+- [Privacy Policy](https://quantixtools.com/privacy-policy/)
+- [Terms](https://quantixtools.com/terms/)
+- [XML Sitemap](https://quantixtools.com/sitemap.xml)
+
+QuantixTools is based in Ajman, United Arab Emirates. No public telephone number or verified social profile is published.

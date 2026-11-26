@@ -1,0 +1,17 @@
+{
+  "name": "QuantixTools",
+  "version": "1.0.0",
+  "endpoint": "https://quantixtools.com/",
+  "description": "Browser-based Islamic reference tools. Open the website in a WebMCP-enabled browser to use its in-page tools.",
+  "capabilities": {
+    "webmcp": {
+      "tools": [
+        "find_quantix_page",
+        "lookup_halal_additive"
+      ]
+    },
+    "markdown": true,
+    "llmsTxt": "https://quantixtools.com/llms.txt",
+    "remoteMcp": false
+  }
+}
