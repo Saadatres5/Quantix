@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "initialization": "module",
+  "canvases": [
+    {
+      "id": "quantix-logo-previewer",
+      "displayName": "Quantix Logo Preview",
+      "description": "Preview the existing Quantix logo at common sizes and backgrounds.",
+      "actions": [
+        {
+          "name": "set_background",
+          "description": "Changes the preview background.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "background": {
+                "type": "string",
+                "enum": ["light", "dark", "green", "transparent"]
+              }
+            },
+            "required": ["background"]
+          }
+        }
+      ]
+    }
+  ]
+}
