@@ -57,35 +57,6 @@
     animObserver.observe(el);
   });
 
-  /* ── Animated Stat Counters ─────────────────────────────────── */
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.querySelectorAll('[data-count]').forEach(el => {
-        const target  = parseFloat(el.dataset.count);
-        const suffix  = el.dataset.suffix || '';
-        const prefix  = el.dataset.prefix || '';
-        const isFloat = target % 1 !== 0;
-        const duration = 1600;
-        const start    = performance.now();
-
-        const tick = (now) => {
-          const elapsed  = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          // ease-out-expo
-          const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-          const val   = target * eased;
-          el.textContent = prefix + (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-      statObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stats-bar').forEach(el => statObserver.observe(el));
-
   /* ── FAQ Accordion ──────────────────────────────────────────── */
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {

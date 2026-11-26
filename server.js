@@ -250,11 +250,11 @@ legacyENumbers.forEach((code) => {
 });
 
 app.use('/css', express.static(path.join(__dirname, 'css'), {
-  maxAge: 0,
+  maxAge: '1d',
   dotfiles: 'ignore',
 }));
 app.use('/js', express.static(path.join(__dirname, 'js'), {
-  maxAge: 0,
+  maxAge: '1d',
   dotfiles: 'ignore',
 }));
 app.use('/images', express.static(path.join(__dirname, 'images'), {

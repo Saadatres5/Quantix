@@ -728,14 +728,11 @@ tr:hover td { background: var(--green-50); transition: background var(--duration
 /* Fade-up: applied by JS via IntersectionObserver */
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
   transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
+    opacity var(--duration-slow) var(--ease-out);
 }
 .fade-up.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 .fade-up-delay-1 { transition-delay: 80ms; }
 .fade-up-delay-2 { transition-delay: 160ms; }
@@ -745,22 +742,20 @@ tr:hover td { background: var(--green-50); transition: background var(--duration
 /* Stagger children */
 .stagger-children > * {
   opacity: 0;
-  transform: translateY(20px);
   transition:
-    opacity var(--duration-slow) var(--ease-out),
-    transform var(--duration-slow) var(--ease-out);
+    opacity var(--duration-slow) var(--ease-out);
 }
-.stagger-children.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:  0ms; }
-.stagger-children.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 80ms; }
-.stagger-children.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:160ms; }
-.stagger-children.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:240ms; }
-.stagger-children.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:320ms; }
-.stagger-children.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:400ms; }
+.stagger-children.visible > *:nth-child(1) { opacity:1; transition-delay:  0ms; }
+.stagger-children.visible > *:nth-child(2) { opacity:1; transition-delay: 80ms; }
+.stagger-children.visible > *:nth-child(3) { opacity:1; transition-delay:160ms; }
+.stagger-children.visible > *:nth-child(4) { opacity:1; transition-delay:240ms; }
+.stagger-children.visible > *:nth-child(5) { opacity:1; transition-delay:320ms; }
+.stagger-children.visible > *:nth-child(6) { opacity:1; transition-delay:400ms; }
 
 /* Scale-in for hero content */
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .animate-scale-in { animation: scale-in 0.5s var(--ease-spring) both; }
 

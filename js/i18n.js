@@ -709,7 +709,6 @@ const QTi18n = {
 
   loadFont(fontName, langCode) {
     if (fontName === 'Inter') {
-      document.body.style.fontFamily = 'system-ui, -apple-system, sans-serif';
       return;
     }
 
