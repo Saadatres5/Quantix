@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a5c3f">
+  <title>حاسبة الزكاة — تقدير للأموال والذهب والأصول | QuantixTools</title>
+  <meta name="description" content="قدّر زكاتك على النقود والذهب والفضة والأسهم والعملات المشفرة وأصول الأعمال. الأسعار وأسعار الصرف تقديرية وليست مباشرة.">
+  <link rel="canonical" href="https://quantixtools.com/ar/zakat-calculator/">
+  <link rel="alternate" hreflang="ar" href="https://quantixtools.com/ar/zakat-calculator/">
+  <link rel="alternate" hreflang="en" href="https://quantixtools.com/zakat-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://quantixtools.com/zakat-calculator/">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+  <meta name="google-adsense-account" content="ca-pub-5444446255342320">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5444446255342320" crossorigin="anonymous"></script>
+</head>
+<body class="rtl">
+  <div id="reading-progress"></div>
+  <nav class="nav" aria-label="التنقل الرئيسي">
+    <div class="nav-inner">
+      <a href="/ar/" class="nav-logo"><div class="nav-logo-icon" aria-hidden="true">Q</div>Quantix<span>Tools</span></a>
+      <div class="nav-links">
+        <a href="/ar/zakat-calculator/" aria-current="page">حاسبة الزكاة</a>
+        <a href="/ar/halal-food-checker/">مدقق المضافات</a>
+        <a href="/ar/">الرئيسية</a>
+      </div>
+      <a class="lang-trigger" href="/zakat-calculator/" lang="en" hreflang="en">English</a>
+      <button class="nav-hamburger" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <h1>حاسبة الزكاة</h1>
+      <p>أدخل الأصول التي تنطبق على حالتك للحصول على تقدير حسابي. لا تحدد الحاسبة الحكم الشرعي للأصول المختلف فيها.</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container-narrow" style="margin:2rem auto">
+      <div class="tool-wrapper">
+        <div style="padding:1.25rem;background:var(--bg-soft);display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="form-group" style="margin:0">
+            <label class="form-label" for="currency">العملة</label>
+            <select id="currency" class="form-input form-select" aria-label="اختر العملة">
+              <option value="AED" selected>AED — درهم إماراتي</option>
+              <option value="SAR">SAR — ريال سعودي</option>
+              <option value="USD">USD — دولار أمريكي</option>
+              <option value="GBP">GBP — جنيه إسترليني</option>
+              <option value="EUR">EUR — يورو</option>
+              <option value="PKR">PKR — روبية باكستانية</option>
+              <option value="MYR">MYR — رينغيت ماليزي</option>
+              <option value="IDR">IDR — روبية إندونيسية</option>
+              <option value="BDT">BDT — تاكا بنغلاديشي</option>
+              <option value="EGP">EGP — جنيه مصري</option>
+              <option value="TRY">TRY — ليرة تركية</option>
+              <option value="INR">INR — روبية هندية</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin:0">
+            <label class="form-label" for="nisab-method">حساب النصاب وفقًا لـ</label>
+            <select id="nisab-method" class="form-input form-select" aria-label="اختر طريقة النصاب">
+              <option value="silver" selected>الفضة (595 غرامًا)</option>
+              <option value="gold">الذهب (85 غرامًا)</option>
+            </select>
+          </div>
+        </div>
+        <div style="padding:.75rem 1.25rem;background:var(--green-light);display:flex;gap:1rem;flex-wrap:wrap" aria-live="polite">
+          <span>نصاب الذهب: <strong id="nisab-gold-value">—</strong></span>
+          <span>نصاب الفضة: <strong id="nisab-silver-value">—</strong></span>
+          <span>تستخدم الحاسبة أسعارًا مرجعية مخزنة، وليست بيانات سوق مباشرة. تحقّق من الأسعار الحالية قبل الاعتماد على التقدير.</span>
+        </div>
+        <div class="tool-tabs" role="tablist">
+          <button class="tool-tab active" data-tab="tab-basic" role="tab" aria-selected="true">أساسي</button>
+          <button class="tool-tab" data-tab="tab-advanced" role="tab" aria-selected="false">متقدم</button>
+          <button class="tool-tab" data-tab="tab-result" role="tab" aria-selected="false">النتيجة</button>
+        </div>
+        <div class="tool-body">
+          <section class="tool-panel active" id="tab-basic" role="tabpanel">
+            <div class="form-grid">
+              <div class="form-group"><label class="form-label" for="cash">النقود والمدخرات المصرفية</label><input type="number" id="cash" class="form-input" min="0" step="0.01" inputmode="decimal" placeholder="0.00"><small class="form-hint">أدخل إجمالي المبلغ</small></div>
+              <div class="form-group"><label class="form-label" for="gold-grams">الذهب (غرام)</label><input type="number" id="gold-grams" class="form-input" min="0" step="0.1" inputmode="decimal" placeholder="0"></div>
+              <div class="form-group"><label class="form-label" for="silver-grams">الفضة (غرام)</label><input type="number" id="silver-grams" class="form-input" min="0" step="0.1" inputmode="decimal" placeholder="0"></div>
+              <div class="form-group"><label class="form-label" for="stocks">الأسهم</label><input type="number" id="stocks" class="form-input" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+              <div class="form-group"><label class="form-label" for="crypto">الأصول المشفرة</label><input type="number" id="crypto" class="form-input" min="0" step="0.01" inputmode="decimal" placeholder="0.00"><small class="form-hint">أدخل القيمة السوقية وفقًا للمصدر الذي تتبعه</small></div>
+              <div class="form-group"><label class="form-label" for="other-savings">مدخرات أخرى</label><input type="number" id="other-savings" class="form-input" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+            </div>
+            <div class="form-group"><label class="form-label" for="debts">ديون مستحقة قريبًا (للحسم)</label><input type="number" id="debts" class="form-input" min="0" step="0.01" inputmode="decimal" placeholder="0.00"><small class="form-hint">أدخل الديون المستحقة خلال السنة القادمة فقط</small></div>
+            <button class="btn btn-primary" type="button" onclick="calculateZakat()">احسب التقدير</button>
+          </section>
+          <section class="tool-panel" id="tab-advanced" role="tabpanel">
+            <p>أضف أصول الأعمال والدخل الإيجاري عند انطباقها على حالتك.</p>
+            <div class="form-grid">
+              <div class="form-group"><label class="form-label" for="business-inventory">مخزون تجاري</label><input type="number" id="business-inventory" class="form-input" min="0" step="0.01" placeholder="0.00"></div>
+              <div class="form-group"><label class="form-label" for="business-receivables">مستحقات تجارية قابلة للتحصيل</label><input type="number" id="business-receivables" class="form-input" min="0" step="0.01" placeholder="0.00"></div>
+              <div class="form-group"><label class="form-label" for="rental-income">صافي الدخل الإيجاري السنوي</label><input type="number" id="rental-income" class="form-input" min="0" step="0.01" placeholder="0.00"></div>
+            </div>
+            <button class="btn btn-primary" type="button" onclick="calculateZakat()">احسب التقدير الكامل</button>
+          </section>
+          <section class="tool-panel" id="tab-result" role="tabpanel">
+            <p>أدخل الأصول واضغط «احسب التقدير» لعرض النتيجة.</p>
+          </section>
+        </div>
+        <div id="zakat-result" style="display:none;padding:1.5rem;border-top:1px solid var(--border)" aria-live="polite">
+          <div style="text-align:center;margin-bottom:1rem">
+            <div style="font-weight:600">تقدير الزكاة السنوية</div>
+            <div id="result-zakat-due" style="font-size:2.25rem;font-weight:700;color:var(--green-dark)">—</div>
+            <div id="result-eligible" style="margin-top:.35rem">—</div>
+            <div id="result-monthly" style="font-size:.85rem;color:var(--text-muted);margin-top:.25rem">—</div>
+          </div>
+          <div class="result-grid">
+            <div class="result-item"><div class="result-item-label">صافي الأموال المحتسبة</div><div class="result-item-val" id="result-net-wealth">—</div></div>
+            <div class="result-item"><div class="result-item-label">حد النصاب</div><div class="result-item-val" id="result-nisab">—</div></div>
+          </div>
+          <details><summary>عرض تفاصيل الحساب</summary><div class="table-wrap"><table aria-label="تفاصيل تقدير الزكاة"><thead><tr><th>نوع الأصل</th><th>القيمة</th></tr></thead><tbody id="zakat-breakdown"></tbody></table></div></details>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem">
+            <button class="btn btn-outline" type="button" onclick="window.print()">طباعة</button>
+            <button class="btn btn-outline copy-btn" type="button" onclick="shareZakat()">مشاركة</button>
+            <button class="btn btn-outline" type="button" onclick="resetZakat()">إعادة ضبط</button>
+          </div>
+        </div>
+      </div>
+      <section class="section">
+        <h2>ملاحظات مهمة</h2>
+        <p>تستخدم الأداة أسعارًا مرجعية ثابتة للمعادن والعملات، وقد لا تطابق الأسعار الحالية. نسبة 2.5% وطريقة حساب النصاب المعروضة لا تحسم الخلافات الفقهية أو أهلية كل أصل للزكاة.</p>
+        <p>تُحسب المدخلات في المتصفح. استشر عالمًا مؤهلًا أو جهة زكاة موثوقة بشأن الأصول المختلف فيها وطريقة النصاب المناسبة لك.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="container"><a href="/ar/">الرئيسية</a> · <a href="/zakat-calculator/" lang="en">النسخة الإنجليزية</a> · <a href="/privacy-policy/" lang="en">الخصوصية (بالإنجليزية)</a></div></footer>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/zakat.js?v=ar1" defer></script>
+</body>
+</html>

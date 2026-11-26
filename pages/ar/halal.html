@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a5c3f">
+  <title>مدقق المضافات الغذائية وأرقام E | QuantixTools</title>
+  <meta name="description" content="ابحث عن المضافات الغذائية برقم E أو الاسم. راجع المصدر والتصنيف المسجل، وتحقق من الشهادة والإرشادات الشرعية للمنتج.">
+  <link rel="canonical" href="https://quantixtools.com/ar/halal-food-checker/">
+  <link rel="alternate" hreflang="ar" href="https://quantixtools.com/ar/halal-food-checker/">
+  <link rel="alternate" hreflang="en" href="https://quantixtools.com/halal-food-checker/">
+  <link rel="alternate" hreflang="x-default" href="https://quantixtools.com/halal-food-checker/">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+  <meta name="google-adsense-account" content="ca-pub-5444446255342320">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5444446255342320" crossorigin="anonymous"></script>
+</head>
+<body class="rtl">
+  <div id="reading-progress"></div>
+  <nav class="nav" aria-label="التنقل الرئيسي">
+    <div class="nav-inner">
+      <a href="/ar/" class="nav-logo"><div class="nav-logo-icon" aria-hidden="true">Q</div>Quantix<span>Tools</span></a>
+      <div class="nav-links">
+        <a href="/ar/zakat-calculator/">حاسبة الزكاة</a>
+        <a href="/ar/halal-food-checker/" aria-current="page">مدقق المضافات</a>
+        <a href="/ar/">الرئيسية</a>
+      </div>
+      <a class="lang-trigger" href="/halal-food-checker/" lang="en" hreflang="en">English</a>
+      <button class="nav-hamburger" type="button" aria-label="فتح قائمة التنقل" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+  <main id="main-content" class="container" style="padding-top:2rem">
+    <header class="page-hero">
+      <h1>مدقق المضافات الغذائية</h1>
+      <p>ابحث برقم E أو باسم المضاف. تعكس النتائج تصنيف قاعدة البيانات ومعلومات المصدر، ولا تُعد شهادة حلال للمنتج.</p>
+    </header>
+    <section class="stats-bar" aria-label="إحصاءات قاعدة البيانات">
+      <div class="stats-bar-inner">
+        <div><div class="stat-item-num" id="stat-total">104+</div><div class="stat-item-label">مضافات في قاعدة البيانات</div></div>
+        <div><div class="stat-item-num" id="stat-halal">—</div><div class="stat-item-label">تصنيف حلال</div></div>
+        <div><div class="stat-item-num" id="stat-haram">—</div><div class="stat-item-label">تصنيف حرام</div></div>
+        <div><div class="stat-item-num" id="stat-mashbooh">—</div><div class="stat-item-label">موضع اشتباه</div></div>
+      </div>
+    </section>
+    <div class="tool-wrapper" style="max-width:900px;margin:2rem auto">
+      <div class="tool-body">
+        <div class="search-box" role="search">
+          <label for="enumber-search" class="form-label">ابحث برقم E أو اسم المكوّن</label>
+          <div style="position:relative;margin-top:.4rem">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="enumber-search" class="search-input" placeholder="مثال: E471 أو gelatin أو MSG" autocomplete="off" inputmode="search" aria-label="البحث عن المضافات">
+          </div>
+          <small id="search-hint" class="form-hint">يمكن البحث برقم المضاف أو اسمه الإنجليزي.</small>
+        </div>
+        <div class="filter-bar" role="group" aria-label="تصفية النتائج">
+          <select id="category-filter" class="filter-select" aria-label="التصفية حسب الفئة">
+            <option value="">جميع الفئات</option>
+            <option value="Colour">ملوّنات (Colour)</option>
+            <option value="Preservative">مواد حافظة (Preservative)</option>
+            <option value="Antioxidant">مضادات أكسدة (Antioxidant)</option>
+            <option value="Emulsifier">مستحلبات (Emulsifier)</option>
+            <option value="Sweetener">محليات (Sweetener)</option>
+            <option value="Flavour Enhancer">محسنات النكهة</option>
+            <option value="Gelling Agent">مواد هلامية</option>
+          </select>
+          <select id="status-filter" class="filter-select" aria-label="التصفية حسب التصنيف">
+            <option value="">جميع التصنيفات</option>
+            <option value="H">حلال حسب قاعدة البيانات</option>
+            <option value="X">حرام حسب قاعدة البيانات</option>
+            <option value="M">مشتبه به حسب قاعدة البيانات</option>
+          </select>
+        </div>
+        <div class="status-legend" aria-label="مفتاح التصنيفات">
+          <span class="legend-item"><span class="legend-dot dot-halal"></span>حلال حسب التصنيف</span>
+          <span class="legend-item"><span class="legend-dot dot-haram"></span>حرام حسب التصنيف</span>
+          <span class="legend-item"><span class="legend-dot dot-mashbooh"></span>مشتبه به؛ تحقّق</span>
+        </div>
+        <div id="enumber-results" role="region" aria-live="polite" aria-label="نتائج البحث">
+          <p style="text-align:center;padding:1rem">جارٍ تحميل قاعدة البيانات…</p>
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <h2>كيف تستخدم النتائج؟</h2>
+      <p>قد تختلف مصادر المضافات ومعايير تقييمها بين المنتجات والجهات. استخدم الاسم ورقم E للمساعدة في البحث، ثم تحقّق من قائمة المكونات وشهادة المنتج واسأل جهة التصنيع عند الحاجة.</p>
+      <p>هذه النسخة العربية في مرحلة الإطلاق الأولى؛ أسماء المكونات وبعض تفاصيل المصدر تظهر بالإنجليزية. يجري استكمال الترجمة على مراحل.</p>
+      <p>للمسائل الشرعية، اتبع توجيه عالم مؤهل أو جهة اعتماد حلال تثق بها.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="container"><a href="/ar/">الرئيسية</a> · <a href="/halal-food-checker/" lang="en">النسخة الإنجليزية</a> · <a href="/privacy-policy/" lang="en">الخصوصية (بالإنجليزية)</a></div></footer>
+  <script src="/js/enumbers.js?v=ar1" defer></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -4,10 +4,36 @@
 (function () {
   'use strict';
 
-  const STATUS = { H: 'Halal', X: 'Haram', M: 'Mashbooh (Doubtful)' };
+  const isArabic = document.documentElement.lang.toLowerCase().startsWith('ar');
+  const STATUS = isArabic
+    ? { H: 'حلال', X: 'حرام', M: 'مشتبه به' }
+    : { H: 'Halal', X: 'Haram', M: 'Mashbooh (Doubtful)' };
   const STATUS_CLASS = { H: 'verdict-halal', X: 'verdict-haram', M: 'verdict-mashbooh' };
   const STATUS_ICON = { H: '✓', X: '✗', M: '?' };
   const MAX_VISIBLE_RESULTS = 24;
+  const resultLabels = isArabic
+    ? { source: 'المصدر', foundIn: 'يوجد في', showAll: 'عرض جميع النتائج', noResults: 'لم يتم العثور على نتائج لـ' }
+    : { source: 'Source', foundIn: 'Found in', showAll: 'Show all', noResults: 'No results found for' };
+  const categoryLabels = isArabic
+    ? {
+      Colour: 'ملوّنات',
+      Preservative: 'مواد حافظة',
+      Antioxidant: 'مضادات أكسدة',
+      Emulsifier: 'مستحلبات',
+      Sweetener: 'محليات',
+      'Flavour Enhancer': 'محسنات النكهة',
+      'Gelling Agent': 'مواد هلامية',
+      Humectant: 'مواد مرطبة',
+      'Raising agent': 'مواد رافعة',
+      'Raising Agent': 'مواد رافعة',
+      'Acidity Regulator': 'منظمات الحموضة',
+      Thickener: 'مواد مكثفة',
+      'Anti-caking Agent': 'مواد مانعة للتكتل',
+      'Firming Agent': 'مواد مثبتة للقوام',
+      'Glazing Agent': 'مواد تلميع',
+      'Flour Treatment Agent': 'مواد معالجة الدقيق'
+    }
+    : {};
 
   /* ── Full E-Number Database ── */
   const ENUMBERS = [
@@ -126,7 +152,9 @@
       const noResults = document.createElement('div');
       const message = document.createElement('p');
       noResults.className = 'no-results';
-      message.textContent = `No results found for "${query}". Try searching by E-number (e.g. E471) or ingredient name.`;
+      message.textContent = isArabic
+        ? `${resultLabels.noResults} "${query}". ابحث برقم E أو بالاسم الإنجليزي للمكوّن.`
+        : `${resultLabels.noResults} "${query}". Try searching by E-number (e.g. E471) or ingredient name.`;
       noResults.appendChild(message);
       container.replaceChildren(noResults);
       return;
@@ -143,18 +171,20 @@
           <span class="verdict ${STATUS_CLASS[e.status]}">${STATUS_ICON[e.status]} ${STATUS[e.status]}</span>
         </div>
         <div class="enumber-meta">
-          <span class="meta-tag">${e.category}</span>
-          <span class="meta-tag">Source: ${e.source}</span>
+          <span class="meta-tag">${categoryLabels[e.category] || e.category}</span>
+          <span class="meta-tag">${resultLabels.source}: ${e.source}</span>
         </div>
         <p class="enumber-desc">${e.desc}</p>
-        <p class="enumber-brands"><strong>Found in:</strong> ${e.brands}</p>
+        <p class="enumber-brands"><strong>${resultLabels.foundIn}:</strong> ${e.brands}</p>
       </div>`).join('');
 
     if (results.length > MAX_VISIBLE_RESULTS && !showAll) {
       const showAllButton = document.createElement('button');
       showAllButton.type = 'button';
       showAllButton.className = 'btn btn-outline';
-      showAllButton.textContent = `Show all ${results.length} results`;
+      showAllButton.textContent = isArabic
+        ? `${resultLabels.showAll} (${results.length})`
+        : `${resultLabels.showAll} ${results.length} results`;
       showAllButton.addEventListener('click', () => renderResults(results, query, true));
       container.appendChild(showAllButton);
     }
@@ -222,7 +252,11 @@
     if (categoryFilter) categoryFilter.addEventListener('change', window.searchENumber);
     if (statusFilter) statusFilter.addEventListener('change', window.searchENumber);
 
-    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    const pathCode = isArabic
+      ? window.location.pathname.match(/\/e([0-9]+[a-z]*)\/?$/i)
+      : null;
+    const initialQuery = new URLSearchParams(window.location.search).get('q') ||
+      (pathCode ? `E${pathCode[1]}` : '');
     if (searchInput && initialQuery) searchInput.value = initialQuery;
     if (searchInput && initialQuery) window.searchENumber();
     else renderResults(ENUMBERS, '');
@@ -230,7 +264,7 @@
     if (categoryFilter) {
       const categories = [...new Set(ENUMBERS.map((entry) => entry.category))].sort();
       categoryFilter.options.length = 1;
-      categories.forEach((category) => categoryFilter.add(new Option(category, category)));
+      categories.forEach((category) => categoryFilter.add(new Option(categoryLabels[category] || category, category)));
     }
 
     // Update stats display

@@ -15,6 +15,42 @@
   };
 
   const ZAKAT_RATE = 0.025; // 2.5%
+  const isArabic = document.documentElement.lang.toLowerCase().startsWith('ar');
+  const text = isArabic ? {
+    due: 'الزكاة المستحقة (2.5%)',
+    cash: 'النقود والمدخرات المصرفية',
+    gold: 'قيمة الذهب',
+    silver: 'قيمة الفضة',
+    stocks: 'الأسهم',
+    crypto: 'الأصول المشفرة',
+    inventory: 'مخزون تجاري',
+    receivables: 'مستحقات تجارية',
+    rental: 'الدخل الإيجاري',
+    savings: 'مدخرات أخرى',
+    debts: 'الديون',
+    net: 'صافي الأموال المحتسبة',
+    dueStatus: '✓ الزكاة مستحقة',
+    belowNisab: '✗ أقل من النصاب',
+    month: 'شهريًا',
+    share: 'تقدير زكاتي هذا العام'
+  } : {
+    due: 'Zakat Due (2.5%)',
+    cash: 'Cash & Bank Savings',
+    gold: 'Gold Value',
+    silver: 'Silver Value',
+    stocks: 'Stocks & Shares',
+    crypto: 'Crypto Assets',
+    inventory: 'Business Inventory',
+    receivables: 'Business Receivables',
+    rental: 'Rental Income',
+    savings: 'Other Savings',
+    debts: 'Less: Debts',
+    net: 'Net Zakatable Wealth',
+    dueStatus: '✓ Zakat Due',
+    belowNisab: '✗ Below Nisab',
+    month: '/month',
+    share: 'My Zakat this year'
+  };
 
   /* ── Currency rates vs USD (update quarterly) ── */
   const CURRENCY = {
@@ -33,7 +69,7 @@
     return el ? el.value : 'USD';
   }
   function fmt(num, currency) {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat(isArabic ? 'ar-AE' : 'en-US', {
       style: 'currency', currency: currency || 'USD', maximumFractionDigits: 2
     }).format(num);
   }
@@ -92,23 +128,23 @@
     document.getElementById('result-zakat-due').textContent = fmt(zakatDue, currency);
     document.getElementById('result-net-wealth').textContent = fmt(netWealthDisplay, currency);
     document.getElementById('result-nisab').textContent = fmt(nisabInCurrency, currency);
-    document.getElementById('result-eligible').textContent = zakatDueUSD > 0 ? '✓ Zakat Due' : '✗ Below Nisab';
+    document.getElementById('result-eligible').textContent = zakatDueUSD > 0 ? text.dueStatus : text.belowNisab;
     document.getElementById('result-eligible').className = zakatDueUSD > 0 ? 'eligible-yes' : 'eligible-no';
 
     // Breakdown
     const breakdown = document.getElementById('zakat-breakdown');
     if (breakdown) {
       const rows = [
-        ['Cash & Bank Savings', fromUSD(cash, currency)],
-        ['Gold Value', fromUSD(goldValue, currency)],
-        ['Silver Value', fromUSD(silverValue, currency)],
-        ['Stocks & Shares', fromUSD(stocksValue, currency)],
-        ['Crypto Assets', fromUSD(cryptoValue, currency)],
-        ['Business Inventory', fromUSD(businessInventory, currency)],
-        ['Business Receivables', fromUSD(businessReceivables, currency)],
-        ['Rental Income', fromUSD(rentalIncome, currency)],
-        ['Other Savings', fromUSD(otherSavings, currency)],
-        ['Less: Debts', -fromUSD(debts, currency)],
+        [text.cash, fromUSD(cash, currency)],
+        [text.gold, fromUSD(goldValue, currency)],
+        [text.silver, fromUSD(silverValue, currency)],
+        [text.stocks, fromUSD(stocksValue, currency)],
+        [text.crypto, fromUSD(cryptoValue, currency)],
+        [text.inventory, fromUSD(businessInventory, currency)],
+        [text.receivables, fromUSD(businessReceivables, currency)],
+        [text.rental, fromUSD(rentalIncome, currency)],
+        [text.savings, fromUSD(otherSavings, currency)],
+        [text.debts, -fromUSD(debts, currency)],
       ].filter(r => r[1] !== 0);
 
       breakdown.innerHTML = rows.map(r => `
@@ -117,21 +153,21 @@
           <td style="text-align:right;color:${r[1] < 0 ? '#c0392b' : 'inherit'}">${fmt(r[1], currency)}</td>
         </tr>`).join('') + `
         <tr style="font-weight:700;background:var(--green-light)">
-          <td>Net Zakatable Wealth</td>
+          <td>${text.net}</td>
           <td style="text-align:right">${fmt(netWealthDisplay, currency)}</td>
         </tr>
         <tr style="font-weight:700;background:var(--green-dark);color:#fff">
-          <td>Zakat Due (2.5%)</td>
+          <td>${text.due}</td>
           <td style="text-align:right">${fmt(zakatDue, currency)}</td>
         </tr>`;
     }
 
     // Monthly breakdown
     const monthly = document.getElementById('result-monthly');
-    if (monthly) monthly.textContent = fmt(zakatDue / 12, currency) + '/month';
+    if (monthly) monthly.textContent = fmt(zakatDue / 12, currency) + (isArabic ? ` ${text.month}` : text.month);
 
     // Share text
-    window._zakatResult = `My Zakat this year: ${fmt(zakatDue, currency)} — calculated on QuantixTools.com`;
+    window._zakatResult = `${text.share}: ${fmt(zakatDue, currency)} — QuantixTools.com`;
   };
 
   /* ── Reset ── */
