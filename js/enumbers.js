@@ -14,10 +14,10 @@
     // Colours
     { code:'E100', name:'Curcumin (Turmeric)', status:'H', category:'Colour', source:'Plant (turmeric root)', desc:'Natural yellow colour from turmeric. Always halal.', brands:'Common in curry products, mustard, cheese.' },
     { code:'E101', name:'Riboflavin (Vitamin B2)', status:'M', category:'Colour', source:'Synthetic or animal', desc:'Can be derived from whey (dairy) or animal sources. Check source.', brands:'Energy drinks, cereals, dairy.' },
-    { code:'E102', name:'Tartrazine', status:'H', category:'Colour', source:'Synthetic', desc:'Synthetic yellow dye. Halal — no animal origin.', brands:'Sweets, soft drinks, snacks.' },
+    { code:'E102', name:'Tartrazine', status:'H', category:'Colour', source:'Synthetic', desc:'Synthetic colourant. Check product-specific ingredients and certification guidance.', brands:'Sweets, soft drinks, snacks.' },
     { code:'E104', name:'Quinoline Yellow', status:'H', category:'Colour', source:'Synthetic', desc:'Synthetic dye. Halal.', brands:'Smoked fish, scotch eggs.' },
     { code:'E110', name:'Sunset Yellow FCF', status:'H', category:'Colour', source:'Synthetic', desc:'Orange-yellow synthetic dye. Halal.', brands:'Jelly, jam, sweets.' },
-    { code:'E120', name:'Carmine (Cochineal)', status:'X', category:'Colour', source:'Insect (cochineal bug)', desc:'Derived from crushed cochineal insects. Haram — insect origin.', brands:'Yoghurt, juices, sweets, lipstick.' },
+    { code:'E120', name:'Carmine (Cochineal)', status:'X', category:'Colour', source:'Insect (cochineal bug)', desc:'Derived from cochineal insects. QuantixTools classifies it as Haram; scholarly and certification guidance may differ.', brands:'Yoghurt, juices, sweets, lipstick.' },
     { code:'E122', name:'Carmoisine', status:'H', category:'Colour', source:'Synthetic', desc:'Red synthetic dye. Halal.', brands:'Jelly, ice cream, drinks.' },
     { code:'E124', name:'Ponceau 4R', status:'H', category:'Colour', source:'Synthetic', desc:'Red synthetic dye. Halal.', brands:'Strawberry jelly, tinned cherries.' },
     { code:'E127', name:'Erythrosine', status:'H', category:'Colour', source:'Synthetic', desc:'Synthetic cherry-red dye. Halal.', brands:'Glacé cherries, tinned fruit.' },
@@ -42,7 +42,7 @@
     { code:'E300', name:'Ascorbic acid (Vitamin C)', status:'H', category:'Antioxidant', source:'Synthetic/plant', desc:'Vitamin C. Always halal.', brands:'Juice, meat, baby food.' },
     { code:'E306', name:'Tocopherol (Vitamin E)', status:'H', category:'Antioxidant', source:'Plant', desc:'Natural Vitamin E from plants. Halal.', brands:'Oils, margarine, nuts.' },
     { code:'E322', name:'Lecithin', status:'M', category:'Emulsifier', source:'Soy (usually) or egg', desc:'Mostly from soy — halal. Egg lecithin — depends on source. Check label.', brands:'Chocolate, bread, margarine.' },
-    // Emulsifiers - the most searched category
+    // Emulsifiers
     { code:'E407', name:'Carrageenan', status:'H', category:'Emulsifier', source:'Seaweed', desc:'Extracted from red seaweed. Halal.', brands:'Ice cream, chocolate milk, deli meats.' },
     { code:'E410', name:'Locust Bean Gum', status:'H', category:'Emulsifier', source:'Plant (carob tree)', desc:'Plant-derived thickener. Halal.', brands:'Ice cream, sauces, baby food.' },
     { code:'E412', name:'Guar Gum', status:'H', category:'Emulsifier', source:'Plant (guar bean)', desc:'Plant-derived thickener. Halal.', brands:'Ice cream, sauces, gluten-free products.' },
@@ -52,7 +52,7 @@
     { code:'E422', name:'Glycerol (Glycerine)', status:'M', category:'Humectant', source:'Animal or plant', desc:'Can be from animal fat (pork or beef) or plant (soy/palm). Must verify source. Widely Mashbooh.', brands:'Cakes, sweets, chewing gum.' },
     { code:'E430', name:'Polyoxyethylene stearate', status:'M', category:'Emulsifier', source:'Animal or plant', desc:'Stearate derived from stearic acid — could be pork or beef tallow. Verify.', brands:'Bread, bakery products.' },
     { code:'E431', name:'Polyoxyethylene (40) stearate', status:'M', category:'Emulsifier', source:'Animal or plant', desc:'Same concern as E430. Verify source.', brands:'Baked goods.' },
-    { code:'E441', name:'Gelatine', status:'X', category:'Gelling Agent', source:'Animal (pig or cow bones/skin)', desc:'Derived from porcine or bovine collagen. Haram if from pork. Halal only if from halal-slaughtered beef. Check certification.', brands:'Jelly sweets, marshmallows, yoghurt, capsules.' },
+    { code:'E441', name:'Gelatine', status:'X', category:'Gelling Agent', source:'Animal (pig, cattle, fish, or mixed sources)', desc:'Source and processing affect its assessment. Check product-specific certification and guidance from a qualified scholar or trusted certifier.', brands:'Jelly sweets, marshmallows, yoghurt, capsules.' },
     { code:'E442', name:'Ammonium phosphatides', status:'H', category:'Emulsifier', source:'Plant (rapeseed oil)', desc:'From plant oil. Halal.', brands:'Chocolate.' },
     { code:'E450', name:'Diphosphates', status:'H', category:'Raising agent', source:'Mineral', desc:'Mineral salts. Halal.', brands:'Processed cheese, meat products, baking powder.' },
     { code:'E471', name:'Mono and diglycerides of fatty acids', status:'M', category:'Emulsifier', source:'Animal or plant', desc:'The most common E-number query. CAN be from pork fat, beef fat, or plant oils. No way to tell from label alone. Look for halal certification or "plant-based" claim.', brands:'Bread, margarine, ice cream, biscuits, chocolate.' },
