@@ -37,7 +37,7 @@ const QT_LANGS = {
       zakat_desc:    'Calculate your annual Zakat on gold, silver, cash, savings and cryptocurrency. Nisab threshold automatically applied.',
       zakat_arrow:   'Open calculator →',
       halal_title:   'Halal E-Number Checker',
-      halal_desc:    'Instantly check if food additives (E-numbers) are Halal, Haram, or Mashbooh. Database of 80+ common food additives.',
+      halal_desc:    'Instantly check if food additives (E-numbers) are Halal, Haram, or Mashbooh. Database of 104+ common food additives.',
       halal_arrow:   'Check E-numbers →',
 
       // E-Numbers
@@ -47,7 +47,7 @@ const QT_LANGS = {
       e441_name:  'Gelatine',
       e120_name:  'Carmine / Cochineal',
       all_label:  'All →',
-      all_sub:    '80+ additives',
+      all_sub:    '104+ additives',
       all_verdict:'Full database',
       mashbooh:   '⚠ Mashbooh',
       often_haram:'✗ Often Haram',
@@ -257,7 +257,7 @@ const QT_LANGS = {
       e441_name:  'Jelatin',
       e120_name:  'Karmin / Koşnil',
       all_label:  'Tümü →',
-      all_sub:    '80+ madde',
+      all_sub:    '104+ madde',
       all_verdict:'Tam veritabanı',
       mashbooh:   '⚠ Meşkûk',
       often_haram:'✗ Çoğunlukla Haram',
@@ -317,7 +317,7 @@ const QT_LANGS = {
       zakat_desc:    'Hitung Zakat tahunan Anda atas emas, perak, uang tunai, tabungan, dan mata uang kripto. Ambang batas Nisab otomatis diterapkan.',
       zakat_arrow:   'Buka Kalkulator →',
       halal_title:   'Pemeriksa Nomor-E Halal',
-      halal_desc:    'Periksa secara instan apakah aditif makanan (nomor E) Halal, Haram, atau Masybooh. Database 80+ aditif makanan umum.',
+      halal_desc:    'Periksa secara instan apakah aditif makanan (nomor E) Halal, Haram, atau Masybooh. Database 104+ aditif makanan umum.',
       halal_arrow:   'Periksa Nomor-E →',
       enumbers_heading: 'Nomor-E Umum',
       enumbers_sub:     'Akses cepat ke aditif makanan yang paling banyak dicari.',
@@ -325,7 +325,7 @@ const QT_LANGS = {
       e441_name:  'Gelatin',
       e120_name:  'Karmin / Cochineal',
       all_label:  'Semua →',
-      all_sub:    '80+ aditif',
+      all_sub:    '104+ aditif',
       all_verdict:'Database lengkap',
       mashbooh:   '⚠ Masybooh',
       often_haram:'✗ Sering Haram',
@@ -453,7 +453,7 @@ const QT_LANGS = {
       zakat_desc:    'Calculez votre Zakat annuelle sur l\'or, l\'argent, les liquidités, l\'épargne et les cryptomonnaies. Seuil Nisab appliqué automatiquement.',
       zakat_arrow:   'Ouvrir le calculateur →',
       halal_title:   'Vérificateur de Numéros E Halal',
-      halal_desc:    'Vérifiez instantanément si les additifs alimentaires (numéros E) sont Halal, Haram ou Mashbooh. Base de données de 80+ additifs.',
+      halal_desc:    'Vérifiez instantanément si les additifs alimentaires (numéros E) sont Halal, Haram ou Mashbooh. Base de données de 104+ additifs.',
       halal_arrow:   'Vérifier les Numéros E →',
       enumbers_heading: 'Numéros E Courants',
       enumbers_sub:     'Accès rapide aux additifs alimentaires les plus recherchés.',
@@ -461,7 +461,7 @@ const QT_LANGS = {
       e441_name:  'Gélatine',
       e120_name:  'Carmin / Cochenille',
       all_label:  'Tout →',
-      all_sub:    '80+ additifs',
+      all_sub:    '104+ additifs',
       all_verdict:'Base complète',
       mashbooh:   '⚠ Mashbooh',
       often_haram:'✗ Souvent Haram',
@@ -529,7 +529,7 @@ const QT_LANGS = {
       e441_name:  'Gelatin',
       e120_name:  'Karmin / Cochineal',
       all_label:  'Semua →',
-      all_sub:    '80+ bahan',
+      all_sub:    '104+ bahan',
       all_verdict:'Pangkalan data penuh',
       mashbooh:   '⚠ Mashbooh',
       often_haram:'✗ Kerap Haram',
@@ -682,11 +682,6 @@ const QTi18n = {
       }
     });
 
-    // Update <html lang> and <title> if available
-    if (lang.t.hero_h1) {
-      document.title = `QuantixTools — ${lang.t.nav_zakat} & ${lang.t.nav_halal}`;
-    }
-
     // Update active state in dropdown
     document.querySelectorAll('.lang-option').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === code);
@@ -713,6 +708,11 @@ const QTi18n = {
   },
 
   loadFont(fontName, langCode) {
+    if (fontName === 'Inter') {
+      document.body.style.fontFamily = 'system-ui, -apple-system, sans-serif';
+      return;
+    }
+
     const url = QT_FONTS[fontName];
     if (!url) return;
     const existingId = `qt-font-${langCode}`;

@@ -1,5 +1,5 @@
 /* QuantixTools — Halal E-Number Search Engine */
-/* Database: 80+ food additives with halal/haram/mashbooh status */
+/* Database: 104 food additives with halal/haram/mashbooh status */
 
 (function () {
   'use strict';
@@ -7,6 +7,7 @@
   const STATUS = { H: 'Halal', X: 'Haram', M: 'Mashbooh (Doubtful)' };
   const STATUS_CLASS = { H: 'verdict-halal', X: 'verdict-haram', M: 'verdict-mashbooh' };
   const STATUS_ICON = { H: '✓', X: '✗', M: '?' };
+  const MAX_VISIBLE_RESULTS = 24;
 
   /* ── Full E-Number Database ── */
   const ENUMBERS = [
@@ -87,7 +88,7 @@
     { code:'E491', name:'Sorbitan Monostearate', status:'M', category:'Emulsifier', source:'Stearic acid — animal or plant', desc:'Stearic acid may be from pork or beef tallow. Mashbooh unless certified halal.', brands:'Yeast preparations, cake mixes.' },
     { code:'E500', name:'Sodium Carbonates', status:'H', category:'Raising Agent', source:'Mineral/Synthetic', desc:'Baking soda base. Mineral origin. Always halal.', brands:'Baking powder, cocoa, bread.' },
     { code:'E516', name:'Calcium Sulphate (Gypsum)', status:'H', category:'Firming Agent', source:'Mineral', desc:'Natural mineral. Always halal.', brands:'Tofu, beer, flour, bread.' },
-    { code:'E901', name:'Beeswax', status:'M', category:'Glazing Agent', source:'Insect (bees)', desc:'Produced by bees. Most scholars consider beeswax halal as it is secreted not from the bee's body. Mashbooh — some scholars differ.', brands:'Confectionery glaze, chocolate, fruit polish.' },
+    { code:'E901', name:'Beeswax', status:'M', category:'Glazing Agent', source:'Insect (bees)', desc:'Produced by bees. Most scholars consider beeswax halal as it is secreted rather than from the bee body. Mashbooh — some scholars differ.', brands:'Confectionery glaze, chocolate, fruit polish.' },
     { code:'E903', name:'Carnauba Wax', status:'H', category:'Glazing Agent', source:'Plant (carnauba palm)', desc:'Plant wax from Brazilian palm leaves. Always halal.', brands:'Sweets, gum, pharmaceutical tablets.' },
     { code:'E904', name:'Shellac', status:'M', category:'Glazing Agent', source:'Insect (lac bug)', desc:'Resin secreted by the female lac bug. Mashbooh — derived from insect secretion. Many scholars consider it haram.', brands:'Confectionery glaze, fruit coatings, pharmaceutical capsules.' },
     { code:'E920', name:'L-Cysteine', status:'M', category:'Flour Treatment Agent', source:'Animal (often duck feathers or human hair) or synthetic', desc:'Can be derived from duck feathers, human hair, or pig bristles. Mashbooh — always check source. Synthetic L-Cysteine (E920) is halal.', brands:'Bread, rolls, baked goods.' },
@@ -117,16 +118,22 @@
     renderResults(results, query);
   };
 
-  function renderResults(results, query) {
+  function renderResults(results, query, showAll = false) {
     const container = document.getElementById('enumber-results');
     if (!container) return;
 
     if (results.length === 0) {
-      container.innerHTML = `<div class="no-results"><p>No results found for "<strong>${query}</strong>". Try searching by E-number (e.g. E471) or ingredient name.</p></div>`;
+      const noResults = document.createElement('div');
+      const message = document.createElement('p');
+      noResults.className = 'no-results';
+      message.textContent = `No results found for "${query}". Try searching by E-number (e.g. E471) or ingredient name.`;
+      noResults.appendChild(message);
+      container.replaceChildren(noResults);
       return;
     }
 
-    container.innerHTML = results.map(e => `
+    const visibleResults = showAll ? results : results.slice(0, MAX_VISIBLE_RESULTS);
+    container.innerHTML = visibleResults.map(e => `
       <div class="enumber-card">
         <div class="enumber-card-header">
           <div>
@@ -142,6 +149,15 @@
         <p class="enumber-desc">${e.desc}</p>
         <p class="enumber-brands"><strong>Found in:</strong> ${e.brands}</p>
       </div>`).join('');
+
+    if (results.length > MAX_VISIBLE_RESULTS && !showAll) {
+      const showAllButton = document.createElement('button');
+      showAllButton.type = 'button';
+      showAllButton.className = 'btn btn-outline';
+      showAllButton.textContent = `Show all ${results.length} results`;
+      showAllButton.addEventListener('click', () => renderResults(results, query, true));
+      container.appendChild(showAllButton);
+    }
   }
 
   /* ── Get single E-number by code (for individual pages) ── */
@@ -159,10 +175,7 @@
     };
   };
 
-  /* ── Auto-search on input ── */
-  document.addEventListener('DOMContentLoaded', function () {
-    // ── NEWLY ADDED — from GSC keyword data ──────────────────
-    // Colours (missing)
+  const ADDITIONAL_ENUMBERS = [
     { code:'E150b', name:'Caustic Sulphite Caramel', status:'H', category:'Colour', source:'Sugar/Sulphite process', desc:'Caramel colour made with sulphite. Halal — no animal derivatives.', brands:'Beers, spirits, vinegar.' },
     { code:'E150c', name:'Ammonia Caramel', status:'H', category:'Colour', source:'Sugar/Ammonia process', desc:'Caramel colour using ammonia. Halal — no animal derivatives.', brands:'Soy sauce, bread, beer.' },
     { code:'E150d', name:'Sulphite Ammonia Caramel', status:'H', category:'Colour', source:'Sugar process', desc:'Most common caramel colour (Cola colour). Halal.', brands:'Cola drinks, sauces, soups.' },
@@ -173,31 +186,28 @@
     { code:'E163', name:'Anthocyanins', status:'H', category:'Colour', source:'Plant (berries, grapes)', desc:'Natural colours from fruit skins. Always halal.', brands:'Drinks, jams, confectionery.' },
     { code:'E170', name:'Calcium Carbonate (Chalk)', status:'H', category:'Colour', source:'Mineral', desc:'Mineral-based white colour. Always halal.', brands:'Bread, sweets, wine.' },
     { code:'E171', name:'Titanium Dioxide', status:'H', category:'Colour', source:'Mineral', desc:'White colour from mineral titanium. Halal — though banned in EU food from 2022.', brands:'Sweets, chewing gum, medicines.' },
-    // Preservatives (missing)
     { code:'E296', name:'Malic Acid', status:'H', category:'Preservative', source:'Synthetic/plant', desc:'Acid found naturally in fruit. Halal.', brands:'Sweets, soft drinks, chewing gum.' },
     { code:'E321', name:'Butylated Hydroxytoluene (BHT)', status:'H', category:'Antioxidant', source:'Synthetic', desc:'Synthetic antioxidant. Halal — no animal origin.', brands:'Crisps, cereals, chewing gum.' },
     { code:'E341', name:'Calcium Phosphates', status:'H', category:'Stabiliser', source:'Mineral', desc:'Mineral-derived raising agent and stabiliser. Halal.', brands:'Baking powder, cheese, cereals.' },
-    // Emulsifiers (missing)
     { code:'E401', name:'Sodium Alginate', status:'H', category:'Thickener', source:'Seaweed (brown algae)', desc:'Extracted from brown seaweed. Always halal.', brands:'Ice cream, sauces, noodles.' },
     { code:'E417', name:'Tara Gum', status:'H', category:'Thickener', source:'Plant (tara tree seeds)', desc:'Plant-derived thickener. Halal.', brands:'Ice cream, sauces, dressings.' },
     { code:'E433', name:'Polysorbate 80', status:'M', category:'Emulsifier', source:'Synthetic (may use animal-derived sorbitol)', desc:'Emulsifier that may use animal-derived sorbitol in processing. Mashbooh — source varies.', brands:'Ice cream, medicines, vitamins.' },
     { code:'E440', name:'Pectins', status:'H', category:'Thickener', source:'Plant (fruit peels)', desc:'Natural gelling agent from citrus/apple peels. Always halal.', brands:'Jams, jellies, sweets, yoghurt.' },
-    { code:'E442', name:'Ammonium Phosphatides', status:'M', category:'Emulsifier', source:'Vegetable oil or animal', desc:'Emulsifier in chocolate. Usually from rapeseed oil — but verify. Mashbooh.', brands:'Chocolate (especially cheap brands).' },
     { code:'E451', name:'Triphosphates', status:'H', category:'Stabiliser', source:'Mineral/Synthetic', desc:'Mineral-based stabiliser. Halal.', brands:'Processed meat, fish products, bread.' },
     { code:'E466', name:'Carboxymethyl Cellulose (CMC)', status:'H', category:'Thickener', source:'Plant (cellulose)', desc:'Plant cellulose derivative. Always halal.', brands:'Ice cream, sauces, diet foods.' },
     { code:'E472', name:'Esters of Mono- and Diglycerides', status:'M', category:'Emulsifier', source:'Animal or plant fat', desc:'Esters of E471 — same concern. Can be pork-derived. Mashbooh unless certified.', brands:'Bread, cakes, pastries.' },
     { code:'E483', name:'Stearyl Tartrate', status:'M', category:'Emulsifier', source:'Animal fat or plant', desc:'Tartrate ester of stearic acid. Stearic acid may be animal-derived. Mashbooh.', brands:'Bread improvers, pastries.' },
     { code:'E492', name:'Sorbitan Tristearate', status:'M', category:'Emulsifier', source:'Stearic acid (may be animal)', desc:'Stearic acid can come from pork or beef tallow. Mashbooh unless plant-certified.', brands:'Chocolate, confectionery.' },
     { code:'E501', name:'Potassium Carbonates', status:'H', category:'Raising Agent', source:'Mineral', desc:'Mineral-based raising agent. Always halal.', brands:'Cocoa, biscuits, bread.' },
-    { code:'E503', name:'Ammonium Carbonates', status:'H', category:'Raising Agent', source:'Mineral/Synthetic', desc:'Raising agent used in biscuits. Halal.', brands:'Biscuits, crackers, pastry.' },
     { code:'E551', name:'Silicon Dioxide (Silica)', status:'H', category:'Anti-caking Agent', source:'Mineral', desc:'Sand/quartz mineral. Always halal.', brands:'Salt, dried spices, coffee creamers.' },
-    // Flavour enhancers (highly searched)
-    { code:'E482', name:'Calcium Stearoyl Lactylate', status:'M', category:'Emulsifier', source:'Stearic acid (animal or plant)', desc:'Stearic acid may be from pork or beef. Mashbooh — look for halal-certified.', brands:'Bread, pastries, whipped toppings.' },
-    { code:'E503', name:'Ammonium Carbonates', status:'H', category:'Raising Agent', source:'Synthetic', desc:'Used in baking. Halal — no animal content.', brands:'Crackers, biscuits.' },
-    { code:'E631', name:'Disodium Inosinate (IMP)', status:'M', category:'Flavour Enhancer', source:'Meat or fish or yeast', desc:'Flavour enhancer. Can be from pork, fish, or yeast. Mashbooh — check source.', brands:'Crisps, instant noodles, soups.' },
     { code:'E635', name:'Disodium 5-Ribonucleotides', status:'M', category:'Flavour Enhancer', source:'Animal or yeast', desc:'Blend of E627 and E631. Same concerns — may be from pork or fish. Mashbooh.', brands:'Crisps, snacks, instant noodles.' },
     { code:'E950', name:'Acesulfame K', status:'H', category:'Sweetener', source:'Synthetic', desc:'Artificial sweetener. Halal — no animal origin.', brands:'Diet drinks, sugar-free sweets, gum.' },
     { code:'E1422', name:'Acetylated Distarch Adipate', status:'H', category:'Thickener', source:'Modified starch (plant)', desc:'Modified corn or potato starch. Always halal.', brands:'Sauces, puddings, processed foods.' },
+  ];
+  ENUMBERS.push(...ADDITIONAL_ENUMBERS);
+
+  /* ── Auto-search on input ── */
+  document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('enumber-search');
     const categoryFilter = document.getElementById('category-filter');
     const statusFilter = document.getElementById('status-filter');
@@ -212,8 +222,16 @@
     if (categoryFilter) categoryFilter.addEventListener('change', window.searchENumber);
     if (statusFilter) statusFilter.addEventListener('change', window.searchENumber);
 
-    // Load all results on page load
-    renderResults(ENUMBERS, '');
+    const initialQuery = new URLSearchParams(window.location.search).get('q');
+    if (searchInput && initialQuery) searchInput.value = initialQuery;
+    if (searchInput && initialQuery) window.searchENumber();
+    else renderResults(ENUMBERS, '');
+
+    if (categoryFilter) {
+      const categories = [...new Set(ENUMBERS.map((entry) => entry.category))].sort();
+      categoryFilter.options.length = 1;
+      categories.forEach((category) => categoryFilter.add(new Option(category, category)));
+    }
 
     // Update stats display
     const stats = window.getENumberStats();

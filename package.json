@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "mkdir -p dist public build out .next && echo ok > dist/.keep && echo ok > public/.keep && echo ok > build/.keep && echo ok > out/.keep"
+    "build": "node --check server.js && node --check js/enumbers.js && node --check js/main.js && node --check js/i18n.js && node --check js/zakat.js && node --check js/scanner.js"
   },
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.19.2"
   },
   "engines": {

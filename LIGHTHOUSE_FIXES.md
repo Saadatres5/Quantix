@@ -1,5 +1,7 @@
 # QuantixTools — Lighthouse Report Fixes (July 2, 2026)
 
+> Historical status: the scores and metric changes below were projections, not a verified Lighthouse run. On Nov 26, 2026, this repository was updated to fix the checker indexing directive, route/redirect handling, checker JavaScript, blocking font requests, and sitemap coverage. Re-run PageSpeed Insights after deploying these changes; no score is claimed here.
+
 ## Issues Fixed
 
 ### 1. ✅ CLS (Cumulative Layout Shift) = 0.702 → Target <0.1

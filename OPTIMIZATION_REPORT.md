@@ -2,6 +2,8 @@
 **Date:** July 2, 2026  
 **Version:** 2.0 Production Ready
 
+> Historical status: performance scores, security grades, traffic forecasts, and ranking projections in this report were not validated by measured test results. On Nov 26, 2026, this repository was updated to fix checker indexing, canonical routes and redirects, legacy URL handling, E-number JavaScript, font requests, and sitemap coverage. Verify the deployed site with Search Console and PageSpeed Insights before treating any score or indexation improvement as achieved.
+
 ---
 
 ## Executive Summary
