@@ -16,6 +16,7 @@
   --green-50:  #f2fbf6;
 
   --gold-600:  #a87320;
+  --gold-700:  #80540d;
   --gold-500:  #c8922a;
   --gold-400:  #e0aa42;
   --gold-100:  #fdf3e0;
@@ -104,8 +105,9 @@ body {
 }
 body.rtl { font-family: var(--font-ar); direction: rtl; text-align: right; }
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--green-600); text-decoration: none; }
+a { color: var(--green-800); text-decoration: none; }
 a:hover { text-decoration: underline; }
+p a { text-decoration: underline; text-underline-offset: 0.15em; }
 
 /* ── Typography ─────────────────────────────────────────────── */
 h1 { font-size: clamp(1.75rem, 4.5vw, 2.75rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; }
@@ -161,7 +163,7 @@ p  { margin-bottom: 1rem; }
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(10,92,63,.25);
 }
-.nav-logo span { color: var(--gold-500); }
+.nav-logo span { color: var(--gold-700); }
 .nav-links {
   display: flex;
   align-items: center;
@@ -630,7 +632,7 @@ p  { margin-bottom: 1rem; }
 
 /* ── Breadcrumb ──────────────────────────────────────────────── */
 .breadcrumb { padding: 0.875rem 0; font-size: 0.82rem; color: var(--text-muted); }
-.breadcrumb a { color: var(--green-600); }
+.breadcrumb a { color: var(--green-800); }
 .breadcrumb a:hover { color: var(--green-800); }
 
 /* ── Ad Slots ────────────────────────────────────────────────── */
@@ -821,6 +823,8 @@ tr:hover td { background: var(--green-50); transition: background var(--duration
 #lang-switcher {
   position: relative;
   margin-left: 0.5rem;
+  min-width: 107px;
+  min-height: 32px;
 }
 
 .lang-trigger {
